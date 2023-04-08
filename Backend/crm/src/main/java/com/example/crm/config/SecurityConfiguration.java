@@ -20,6 +20,10 @@ public class SecurityConfiguration {
             .authorizeHttpRequests()
             .requestMatchers("/api/v1/**")
             .permitAll()
+            .and()
+            .authorizeHttpRequests()
+            .requestMatchers("/error")
+            .permitAll()
             .anyRequest()
             .authenticated();
         return httpSecurity.build();
